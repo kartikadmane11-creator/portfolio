@@ -570,6 +570,8 @@
                 </div>
                 <div class="skill-card" onclick="openModal('3dprint')">
                     <div class="click-hint">Click to explore</div>
+                    <img src="https://github.com/kartikadmane11-creator/portfolio/blob/main/WhatsApp%20Image%202025-09-24%20at%2012.12.54%20AM.jpeg" alt="WhatsApp Image 2025-09-24 at 12.12.54 AM.jpeg" width="500" height="600">
+
                     <h3>3D Printing</h3>
                     <p>3D printing technology, prototyping, and additive manufacturing for rapid product development</p>
                 </div>
