@@ -1,4 +1,5 @@
-
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -89,6 +90,21 @@
 
         .nav-links a:hover::after {
             width: 80%;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            height: 3px;
+            width: 25px;
+            background: #2c3e50;
+            margin: 3px 0;
+            transition: 0.3s;
         }
 
         /* Hero Section */
@@ -223,6 +239,7 @@
             font-weight: 700;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
         }
 
         .profile-img:hover {
@@ -341,6 +358,10 @@
             font-size: 2rem;
         }
 
+        .modal-header h2::after {
+            display: none;
+        }
+
         .close {
             color: white;
             position: absolute;
@@ -408,13 +429,13 @@
             color: #6c757d;
             font-style: italic;
             transition: all 0.3s ease;
-            overflow: hidden; /* Ensure image doesn't overflow */
+            overflow: hidden;
         }
 
         .screenshot img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* Ensures the image fits within its container without cropping */
+            object-fit: contain;
             border-radius: 5px;
         }
 
@@ -436,9 +457,19 @@
             border-radius: 0 8px 8px 0;
         }
 
-        .learning-points li::before {
-            content: '💡';
-            margin-right: 10px;
+        /* Contact cards styling */
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            min-width: 200px;
+            text-decoration: none;
+            color: inherit;
         }
 
         /* Animations */
@@ -459,8 +490,16 @@
                 display: none;
             }
 
+            .mobile-menu {
+                display: flex;
+            }
+
             .hero-content h1 {
                 font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
             }
 
             .about-content {
@@ -479,6 +518,16 @@
 
             .modal-body {
                 padding: 1rem;
+            }
+
+            .contact-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-card {
+                width: 100%;
+                max-width: 300px;
             }
         }
 
@@ -507,6 +556,11 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -529,7 +583,7 @@
                     <p>I'm a dynamic Python developer with expertise in web development and 3D design. Currently pursuing Bachelor of Engineering in Information Technology from Shri Sant Gajanan Maharaj College of Engineering, Shegaon.</p>
                     <p>I have proven ability to create responsive web applications and optimize performance, while fostering collaboration and innovation. I'm skilled in iOS app development and committed to continuous professional growth.</p>
                     <p>I am currently seeking roles where I can utilize my experience and skills to contribute to innovative projects and grow professionally.</p>
-                    <a href="Kartik_Admane_Resume.pdf" class="btn" style="margin-top: 1rem;" download>Download Resume</a>
+                    <a href="#" class="btn" style="margin-top: 1rem;" onclick="alert('Resume download would be available with actual PDF file')">Download Resume</a>
                 </div>
             </div>
         </section>
@@ -667,18 +721,24 @@
             <h2>Contact Me</h2>
             <div style="text-align: center;">
                 <p style="font-size: 1.1rem; color: #6c757d; margin-bottom: 2rem;">I'm always open to discussing new opportunities and projects. Feel free to reach out!</p>
-                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
-                    <a href="tel:+919067310965" class="skill-card" style="text-decoration: none; min-width: 200px;">
-                        <strong style="color: #3498db; font-size: 1.1rem;">Phone</strong><br>
-                        +91 90673 10965
+                <div class="contact-cards">
+                    <a href="tel:+919067310965" class="contact-card">
+                        <div class="skill-card">
+                            <strong style="color: #3498db; font-size: 1.1rem;">Phone</strong><br>
+                            +91 90673 10965
+                        </div>
                     </a>
-                    <a href="mailto:kartikadmane11@gmail.com" class="skill-card" style="text-decoration: none; min-width: 200px;">
-                        <strong style="color: #3498db; font-size: 1.1rem;">Email</strong><br>
-                        kartikadmane11@gmail.com
+                    <a href="mailto:kartikadmane11@gmail.com" class="contact-card">
+                        <div class="skill-card">
+                            <strong style="color: #3498db; font-size: 1.1rem;">Email</strong><br>
+                            kartikadmane11@gmail.com
+                        </div>
                     </a>
-                    <div class="skill-card" style="min-width: 200px;">
-                        <strong style="color: #3498db; font-size: 1.1rem;">Location</strong><br>
-                        Mumbai, 448605
+                    <div class="contact-card">
+                        <div class="skill-card">
+                            <strong style="color: #3498db; font-size: 1.1rem;">Location</strong><br>
+                            Mumbai, 448605
+                        </div>
                     </div>
                 </div>
             </div>
@@ -719,7 +779,7 @@
                     "Understanding of Python best practices and PEP 8 standards for writing clean, readable, and efficient code."
                 ],
                 projects: ["E-commerce Platform Backend", "Web Scraping Tools", "Data Analysis Scripts", "Task Automation Bots"],
-                screenshots: ["python_project1.jpg", "python_project2.png", "python_project3.jpg"] // Placeholder for your images
+                screenshots: ["python_project1.jpg", "python_project2.png", "python_project3.jpg"]
             },
             web: {
                 title: "Web Development",
@@ -733,7 +793,7 @@
                     "Expertise in optimizing web performance for faster loading times and improved user engagement."
                 ],
                 projects: ["Personal Portfolio Website", "E-commerce Frontend", "Real-time Chat Interface", "Interactive Data Dashboards"],
-                screenshots: ["web_project1.jpg", "web_project2.png", "web_project3.jpg"] // Placeholder for your images
+                screenshots: ["web_project1.jpg", "web_project2.png", "web_project3.jpg"]
             },
             cyber: {
                 title: "Cyber Security",
@@ -747,7 +807,7 @@
                     "Experience with security tools and frameworks for threat intelligence and incident response."
                 ],
                 projects: ["Security Audit Reports", "Vulnerability Assessments", "Security Protocol Implementation", "Secure Web Application Development"],
-                screenshots: ["cyber_project1.jpg", "cyber_project2.png", "cyber_project3.jpg"] // Placeholder for your images
+                screenshots: ["cyber_project1.jpg", "cyber_project2.png", "cyber_project3.jpg"]
             },
             mobile: {
                 title: "Mobile App Development",
@@ -761,9 +821,9 @@
                     "Knowledge of mobile app optimization techniques for performance, battery life, and data usage."
                 ],
                 projects: ["iOS Utility Apps", "Mobile UI Prototypes", "App Store Submissions", "Simple Game Development"],
-                screenshots: ["mobile_project1.jpg", "mobile_project2.png", "mobile_project3.jpg"] // Placeholder for your images
+                screenshots: ["mobile_project1.jpg", "mobile_project2.png", "mobile_project3.jpg"]
             },
-            "3d": { // Using quotes because '3d' is not a valid JS identifier without them
+            "3d": {
                 title: "3D Design & CAD",
                 description: "Advanced 3D modeling and design using professional CAD software like Fusion 360 for mechanical design, product prototyping, and visualization. I bring concepts to life in three dimensions.",
                 techStack: ["Fusion 360", "3D Modeling", "CAD Design", "Technical Drawing", "Product Design", "Rendering", "Assembly Design"],
@@ -775,7 +835,7 @@
                     "Experience with design for 3D printing and other additive manufacturing processes."
                 ],
                 projects: ["Mechanical Components", "Product Prototypes", "Technical Drawings", "Custom Enclosures"],
-                screenshots: ["3d_project1.jpg", "3d_project2.png", "3d_project3.jpg"] // Placeholder for your images
+                screenshots: ["3d_project1.jpg", "3d_project2.png", "3d_project3.jpg"]
             },
             pcb: {
                 title: "PCB Design",
@@ -789,9 +849,9 @@
                     "Skills in debugging and testing electronic circuits, from prototype to final product."
                 ],
                 projects: ["Custom PCB Designs", "Arduino Shield Development", "Sensor Interface Boards", "Power Management Modules"],
-                screenshots: ["pcb_project1.jpg", "pcb_project2.png", "pcb_project3.jpg"] // Placeholder for your images
+                screenshots: ["pcb_project1.jpg", "pcb_project2.png", "pcb_project3.jpg"]
             },
-            "3dprint": { // Using quotes because '3dprint' is not a valid JS identifier without them
+            "3dprint": {
                 title: "3D Printing",
                 description: "Expertise in 3D printing technology, encompassing prototyping, additive manufacturing, and optimizing designs for various printing methods. I turn digital models into physical objects.",
                 techStack: ["FDM Printing", "SLA Printing", "Slicing Software (Cura, PrusaSlicer)", "3D Printer Maintenance", "Material Selection (PLA, ABS, PETG, Resin)", "Post-processing"],
@@ -803,7 +863,7 @@
                     "Knowledge of design for additive manufacturing (DfAM) principles for successful prints."
                 ],
                 projects: ["Functional Prototypes", "Custom Parts", "Educational Models", "Tooling and Jigs"],
-                screenshots: ["3dprint_project1.jpg", "3dprint_project2.png", "3dprint_project3.jpg"] // Placeholder for your images
+                screenshots: ["3dprint_project1.jpg", "3dprint_project2.png", "3dprint_project3.jpg"]
             },
             laser: {
                 title: "Laser Cutting",
@@ -817,7 +877,7 @@
                     "Skills in post-processing and finishing techniques for laser-cut parts."
                 ],
                 projects: ["Custom Enclosures", "Precision Parts", "Decorative Elements", "Stencils and Templates"],
-                screenshots: ["laser_project1.jpg", "laser_project2.png", "laser_project3.jpg"] // Placeholder for your images
+                screenshots: ["laser_project1.jpg", "laser_project2.png", "laser_project3.jpg"]
             },
             database: {
                 title: "Database & Tools",
@@ -831,7 +891,7 @@
                     "Skills in code versioning and project management using Git and GitHub."
                 ],
                 projects: ["Database Schema Design", "Data Migration Scripts", "Repository Management", "SQL Reporting Tools"],
-                screenshots: ["database_project1.jpg", "database_project2.png", "database_project3.jpg"] // Placeholder for your images
+                screenshots: ["database_project1.jpg", "database_project2.png", "database_project3.jpg"]
             },
             languages: {
                 title: "Languages",
@@ -845,7 +905,7 @@
                     "Understanding of translation and localization principles for global projects."
                 ],
                 projects: ["Technical Documentation", "Multilingual Presentations", "Cross-cultural Project Communication", "Localized Content Creation"],
-                screenshots: ["languages_project1.jpg", "languages_project2.png", "languages_project3.jpg"] // Placeholder for your images
+                screenshots: ["languages_project1.jpg", "languages_project2.png", "languages_project3.jpg"]
             }
         };
 
@@ -881,7 +941,7 @@
                     <div class="screenshot-gallery">
                         ${skill.screenshots.map(screenshot => `
                             <div class="screenshot">
-                                <img src="images/${screenshot}" alt="${screenshot.replace(/_/g, ' ').replace(/\..*/, '')}" onerror="this.onerror=null;this.src='https://via.placeholder.com/200x150?text=Image+Not+Found';" />
+                                <span>Screenshot: ${screenshot.replace(/_/g, ' ').replace(/\..*/, '')}</span>
                             </div>
                         `).join('')}
                     </div>
@@ -901,33 +961,39 @@
                 <div class="documentation-section">
                     <h3>💡 Key Learnings</h3>
                     <ul class="learning-points">
-                        ${skill.learnings.map(learning => `<li>${learning}</li>`).join('')}
+                        ${skill.learnings.map(learning => `<li>💡 ${learning}</li>`).join('')}
                     </ul>
                 </div>
             `;
             
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling on body when modal is open
+            document.body.style.overflow = 'hidden';
         }
 
         // Close modal functionality
         function closeModal() {
             const modal = document.getElementById('skillModal');
             modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling on body
+            document.body.style.overflow = 'auto';
         }
 
         // Event listeners
         document.addEventListener('DOMContentLoaded', function() {
             // Close modal when clicking the X
-            document.querySelector('.close').addEventListener('click', closeModal);
+            const closeButton = document.querySelector('.close');
+            if (closeButton) {
+                closeButton.addEventListener('click', closeModal);
+            }
             
             // Close modal when clicking outside
-            document.getElementById('skillModal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeModal();
-                }
-            });
+            const modal = document.getElementById('skillModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeModal();
+                    }
+                });
+            }
             
             // Close modal with Escape key
             document.addEventListener('keydown', function(e) {
@@ -935,6 +1001,24 @@
                     closeModal();
                 }
             });
+
+            // Mobile menu functionality
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenu && navLinks) {
+                mobileMenu.addEventListener('click', function() {
+                    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '100%';
+                    navLinks.style.left = '0';
+                    navLinks.style.right = '0';
+                    navLinks.style.background = 'white';
+                    navLinks.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                    navLinks.style.padding = '1rem';
+                });
+            }
         });
 
         // Smooth scrolling for navigation links
@@ -954,12 +1038,14 @@
         // Header background on scroll
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            if (header) {
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                    header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                    header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                }
             }
         });
 
